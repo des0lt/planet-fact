@@ -87,11 +87,13 @@ fetch('./data.json')
                 <div class="planet-illustration">
                     <div class="picture"></div>
                     <div class="descr">
-                        <h1 class="antonio-medium-h1" id="name"></h1>
-                        <p class="descr-text league-spartan-body active"></p>
-                        <p class="descr-text league-spartan-body"></p>
-                        <p class="descr-text league-spartan-body"></p>
-                        <div class="source league-spartan-body"></div>
+                        <div class="text-wrapp">
+                            <h1 class="antonio-medium-h1" id="name"></h1>
+                            <p class="descr-text league-spartan-body active"></p>
+                            <p class="descr-text league-spartan-body"></p>
+                            <p class="descr-text league-spartan-body"></p>
+                            <div class="source league-spartan-body"></div>
+                        </div>
                         <div class="buttons-wrap">
                             <button class="league-spartan-h3 active">
                                 <span>01</span>

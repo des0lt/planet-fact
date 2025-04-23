@@ -185,14 +185,20 @@ main {
         .descr {
             display: flex;
             flex-direction: column;
-            gap: 24px;
+            gap: 39px;
             margin-top: 56px;
             width: 350px;
+            .text-wrapp {
+                display: flex;
+                flex-direction: column;
+                gap: 24px;
+            }
             h1 {
                 text-transform: uppercase;
             }
             p {
                 display: none;
+                margin-bottom: 8px; /**/
             }
             .active {
                 display: block;
@@ -243,6 +249,7 @@ main {
                     width: 100%;
                     height: 48px;
                     text-transform: uppercase;
+                    text-align: left;
                     background: transparent;
                     outline: 0;
                     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -251,12 +258,13 @@ main {
                     pointer-events: fill;
                     span, h3 {
                         pointer-events: none;
+                        font-weight: 500;
                     }
                     span {
                         opacity: 0.5;
                     }
                     &:hover {
-                        background-color: var(--main-color);
+                        background-color: rgba(216, 216, 216, .2)
                     }
                 }
                 .active {
@@ -306,5 +314,99 @@ main {
 
     .active {
         display: block;
+    }
+}
+
+@media (max-width: 1440px) {
+
+    header {
+        height: unset; /**/
+        flex-direction: column; /**/
+        gap: 39px; /**/
+        padding: 32px 0px 27px 0px; /**/
+        nav {
+            a {
+                font-size: 11px;
+                &::before {
+                    transform: translateY(-400%); /**/
+                }
+                &:hover {
+                    &::before {
+                        transform: translateY(-400%); /**/
+                    }
+                }
+            }
+            .active {
+                &::before {
+                    transform: translateY(-400%); /**/
+                }
+            }
+        }
+    }
+
+    main {
+        padding: 27px 40px 36px 40px; /**/
+        .planet-illustration {
+            align-items: center; /**/
+            min-height: 422px; /**/
+            flex-direction: column; /**/
+            gap: 0; /**/
+            margin-bottom: 27px; /**/
+            .picture {
+                min-width: 422px; /**/
+                min-height: 422px; /**/
+                div {
+                    background-size: 50%;
+                }
+            }
+            .descr {
+                flex-direction: row; /**/
+                margin-top: 11px; /**/
+                max-width: 789px; /**/
+                width: 100%; /**/
+                align-items: center; /**/
+                justify-content: space-between; /**/
+                h1 {
+                    font-size: 48px; /**/
+                    line-height: normal; /**/
+                }
+                p {
+                    max-width: 339px; /**/
+                    font-size: 11px; /**/
+                }
+                .source {
+                    .wiki-link {
+                        font-size: 12px; /**/
+                    }
+                }
+                .buttons-wrap {
+                    button {
+                        width: 281px; /**/
+                        height: 40px; /**/
+                        font-size: 9px; /**/
+                    }
+                }
+            }
+        }
+    
+        .planet-characteristics {
+            gap: 11px; /**/
+            width: 100%; /**/
+            max-width: 789px; /**/
+            margin: 0 auto; /**/
+            .characteristics_wrap {
+                width: 25%; /**/
+                height: 88px; /**/
+                padding: 16px 15px 19px 15px; /**/
+                h4 {
+                    font-size: 8px; /**/
+                    line-height: normal; /**/
+                }
+                h2 {
+                    font-size: 24px; /**/
+                    line-height: normal; /**/
+                }
+            }
+        }
     }
 }
