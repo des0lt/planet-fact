@@ -101,11 +101,11 @@ fetch('./data.json')
                             </button>
                             <button class="league-spartan-h3">
                                 <span>02</span>
-                                <h3>Internal Structure</h3>
+                                <h3><span class="second-line">Internal </span>Structure</h3>
                             </button>
                             <button class="league-spartan-h3">
                                 <span>02</span>
-                                <h3>Surface Geology</h3>
+                                <h3>Surface<span class="second-line"> Geology</span></h3>
                             </button>
                         </div>
                     </div>
@@ -135,11 +135,13 @@ fetch('./data.json')
     const navBar = document.querySelectorAll('nav a');
 
     mainColors = ['var(--light-blue)', 'var(--yellow)', 'var(--purple)', 'var(--brown)', 'var(--red)', 'var(--orange)', 'var(--green)', 'var(--blue)']
+    planetsSize = ['43.5%', '60%', '67.5%', '50.5%', '87.3%', '100%', '68.8%', '67.5%'];
 
     navBar.forEach((element, i) => {
         element.addEventListener('click', (e) => {
             e.preventDefault();
             document.documentElement.style.setProperty('--main-color', mainColors[i]);
+            document.documentElement.style.setProperty('--main-size', planetsSize[i]);
             targetActive(navBar, e);
 
             const planet = new Planet(data[i]);
@@ -193,6 +195,28 @@ fetch('./data.json')
     planet.changeLink();
     planet.changeCharacteristics();
     attachSwitchListeners(planet)
+
+    const hamburger = document.querySelector('.hamburger');
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelectorAll('nav a');
+
+    hamburger.addEventListener('click', () => {
+        if (nav.classList.contains('nav-active')) {
+            nav.classList.remove('nav-active');
+            document.body.style.overflow = '';
+        } else {
+            nav.classList.add('nav-active');
+            document.body.style.overflow = 'hidden';
+        }
+    })
+
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            nav.classList.remove('nav-active');
+            document.body.style.overflow = '';
+        })
+    })
+    
       
     })
     .catch(err => document.querySelector('main').innerHTML = `
